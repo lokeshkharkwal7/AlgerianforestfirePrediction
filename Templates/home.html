@@ -1,0 +1,90 @@
+
+
+
+
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<style> 
+body {
+      background-image: url("https://wallpaperaccess.com/full/437922.jpg");
+      background-size: cover;
+    }
+</style> 
+
+  
+</head>
+
+<body> 
+ <div class="login">
+	<h1><font color="white"> Algerian forest prediction Classifier </font> </h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict_Classifier')}}"method="post">
+        <input type="text" name="month" placeholder="month" required="required" /><br>
+        <input type="text" name="Temperature" placeholder="Temperature" required="required" /><br>
+    	<input type="text" name="RH" placeholder="RH" required="required" /><br>
+        <input type="text" name="Ws" placeholder="Ws" required="required" /><br>
+        <input type="text" name="Rain" placeholder="Rain" required="required" /><br>
+        <input type="text" name="FFMC" placeholder="FFMC" required="required" /><br>
+        <input type="text" name="DMC" placeholder="DMC" required="required" /><br>
+        <input type="text" name="DC" placeholder="DC" required="required" /><br>
+        <input type="text" name="ISI" placeholder="ISI" required="required" /><br>
+        <input type="text" name="BUI" placeholder="BUI" required="required" /><br>
+        <input type="text" name="FWI" placeholder="FWI" required="required" /><br>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+    <h2><font color="white"> {{prediction_text}} </font></h2>
+    <h1><font color="white"> </font></h1>
+
+     <!-- Main Input For Receiving Query to our ML Regression-->
+     <h1><font color="white"> Algerian forest prediction Regressor </font> </h1>
+
+    <form action="{{ url_for('predict_Reg')}}"method="post">
+      <input type="text" name="month" placeholder="month" required="required" /><br>
+    <input type="text" name="RH" placeholder="RH" required="required" /><br>
+      <input type="text" name="Ws" placeholder="Ws" required="required" /><br>
+      <input type="text" name="Rain" placeholder="Rain" required="required" /><br>
+      <input type="text" name="FFMC" placeholder="FFMC" required="required" /><br>
+      <input type="text" name="DMC" placeholder="DMC" required="required" /><br>
+      <input type="text" name="DC" placeholder="DC" required="required" /><br>
+      <input type="text" name="ISI" placeholder="ISI" required="required" /><br>
+      <input type="text" name="BUI" placeholder="BUI" required="required" /><br>
+      <input type="text" name="FWI" placeholder="FWI" required="required" /><br>
+     
+     
+
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+  </form>
+  
+  <h2><font color="white"> {{prediction_text_}} </font></h2>
+  <h1><font color="white"> </font></h1>
+
+   <br>
+   <br>
+  
+   
+ </div>
+
+ 
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+ 
+
+ 
